@@ -2,20 +2,99 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>vanellope_race</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Bevan"
-      rel="stylesheet"
-    />
+    <title>portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css" />
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script> -->
-    <script src="lib/p5.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.css" rel="stylesheet">
+    <!-- スクロールを１ページずつにしてくれるライブラリ -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/15.2.1/smooth-scroll.min.js"></script> -->
+    <!-- <script src="js/fullpage.js"></script> -->
+    <!-- データを可視化するライブラリ -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <!-- スクロールを綺麗にするライブラリ -->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- <script src="lib/p5.min.js"></script>
     <script src="lib/p5.dom.min.js"></script>
-    <script src="lib/p5.play.js"></script>
+    <script src="lib/p5.play.js"></script> -->
     <!-- <script src="js/sketch.js"></script> -->
   </head>
-  <body></body>
+
+  <body>
+    <nav>
+      <div class = "four-corner">
+      <ul>
+        <li class = "box box-topleft flex-box"><a href = "#about">about</a></li>
+        <li class = "box box-topright flex-box"><a href = "#skill">skill</a></li>
+        <li class = "box box-bottomleft flex-box"><a href = "#work">work</a></li>
+        <li class = "box box-bottomright flex-box"><a href = "#favorite">favorite</a></li>
+      </ul>
+      </div>
+    </nav>
+    <div class = "container" id = "fullpage"></div>
+      <section id = "home" class = "content section flex-box">
+          <img src="svg/neon_sign_sxy.svg" width="500" class="flex-box home" alt="">
+      </section>
+
+      <section id = "about" class = "content section container">
+        <p class = "header flex-box">about</p>
+        <h1>Masakazu Nishimura</h1>
+        <h2>a.k.a MARVEL/MUSASHI</h2>
+        <div class = "left-about">
+        <img src = "assets/images/profile.png" class = "profile">
+        </div>
+        <div class = "right-about">
+            <div class="history"><p class="year">2014.4</p><div class = "contents-paragraph"><p class="action">Seikei Uni</p><p class="detail">Major computer science</p></div></div>
+            <div class="history"><p class="year">2015.8</p><div class = "contents-paragraph"><p class="action">Hitchhike 10000+km</p><p class="detail">Japan / Thailand / Malaysia / Australia</p></div></div>
+            <div class="history"><p class="year">2016.3</p><div class = "contents-paragraph"><p class="action">Life is Tech! Mentor</p><p class="detail">Minecraft / Media Art / 3DCG / Movie<br>Camera / Web Service / Web Design</p></div></div>
+            <div class="history"><p class="year">2017.8</p><div class = "contents-paragraph"><p class="action">Queensland Uni<p class="detail">(Australia)</p></p><p class="detail">Business English / IT support intern</p></div></div>
+            <div class="history"><p class="year">2018.5</p><div class = "contents-paragraph"><p class="action">Meeting Sony α7RⅡ</p><p class="detail">photograher at Life is Tech! camp</p></div></div>
+            <div class="history"><p class="year">2018.8</p><div class = "contents-paragraph"><p class="action">Oxford Camp Mentor</p><p class="detail">Life is Tech! global camp movie mentor</p></div></div>
+        </div>
+      </section>
+
+      <section id = "skill" class = "content section container">
+        <p class = "header flex-box">skill</p>
+        <script class = "relation container" src="js/skill.js"></script>
+      </section>
+
+      <section id = "work" class = "content section container">
+        <p class = "header flex-box">work</p>
+        <div class = "work-box" data-aos="fade-up">
+          <img src = "" class = "work-square">
+          <p class = "work-title">technologia</p>
+        </div>
+        <div class = "work-box" data-aos="fade-up">
+          <img src = "" class = "work-square">
+          <p class = "work-title">mentor</p>
+        </div>
+        <div class = "work-box" data-aos="fade-up">
+          <img src = "" class = "work-square">
+          <p class = "work-title">photographer</p>
+        </div>
+        <div class = "work-box" data-aos="fade-up">
+          <img src = "" class = "work-square">
+          <p class = "work-title">Sony Mesh</p>
+        </div>
+        <div class = "work-box" data-aos="fade-up">
+          <img src = "" class = "work-square">
+          <p class = "work-title">Youtuber</p>
+        </div>
+        <div class = "work-box" data-aos="fade-up">
+          <img src = "" class = "work-square">
+          <p class = "work-title">Hanamaru Lab</p>
+        </div>
+      </section>
+
+      <section id = "favorite" class = "content section container">
+        <p class = "header flex-box">favorite</p>
+        <div class = "upshelf"></div>
+        <div class = "downshelf"></div>
+      </section>
+    </div>
+  </body>
 </html>
