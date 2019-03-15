@@ -1,5 +1,5 @@
-var width = 600;
-var height = 500;
+var width = 1020;
+var height = 700;
 // nodeの定義。ここを増やすと楽しい。
 var nodes = [
   {
@@ -34,7 +34,7 @@ var nodes = [
   }
 ];
 
-var radius = 20;
+var radius = 100;
 // node同士の紐付け設定。実用の際は、ここをどう作るかが難しいのかも。
 var links = [
   { source: 0, target: 1 },
@@ -59,7 +59,7 @@ var force = d3.layout
 
 // svg領域の作成
 var svg = d3
-  .select("#contents3")
+  .select("#relation")
   .append("svg")
   .attr({ width: width, height: height });
 
@@ -70,7 +70,7 @@ var link = svg
   .enter()
   .append("line")
   .style({
-    stroke: "#ccc",
+    stroke: "#fff",
     "stroke-width": 1
   });
 
@@ -84,7 +84,7 @@ var node = svg
     return d.r;
   })
   .style({
-    fill: "orange"
+    fill: "white"
   })
   .call(force.drag);
 
@@ -136,7 +136,7 @@ force.on("tick", function() {
       return data.x;
     },
     y: function(data) {
-      return data.y + 50;
+      return data.y;
     }
   });
   node
