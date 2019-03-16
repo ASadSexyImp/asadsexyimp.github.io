@@ -2,105 +2,25 @@ var width = 1020;
 var height = 700;
 // nodeの定義。ここを増やすと楽しい。
 var nodes = [
-  {
-    id: 0,
-    label: "CODE",
-    r: 50,
-    fontSize: 50
-  },
-  {
-    id: 1,
-    label: "JS",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 2,
-    label: "HTML/CSS",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 3,
-    label: "C++",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 4,
-    label: "P5.js",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 5,
-    label: "rails",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 6,
-    label: "ruby",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 7,
-    label: "python",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 8,
-    label: "DESIGN",
-    r: 50,
-    fontSize: 50
-  },
-  {
-    id: 9,
-    label: "JS",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 10,
-    label: "HTML/CSS",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 11,
-    label: "C++",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 12,
-    label: "P5.js",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 13,
-    label: "rails",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 14,
-    label: "ruby",
-    r: 20,
-    fontSize: 20
-  },
-  {
-    id: 15,
-    label: "python",
-    r: 20,
-    fontSize: 20
-  }
+  {id: 0, label: "CODE", r: 88, fontSize: 48, color: "#0737ff", x: 340},
+  {id: 1, label: "JS", r: 32, fontSize: 20, color: "#f9f9f9", x: 340},
+  {id: 2, label: "HTML/CSS", r: 32, fontSize: 16, color: "#f9f9f9", x: 340},
+  {id: 3, label: "C++", r: 32, fontSize: 16, color: "#f9f9f9", x: 340},
+  {id: 4, label: "P5.js", r: 64, fontSize: 28, color: "#f9f9f9", x: 340},
+  {id: 5, label: "rails", r: 32, fontSize: 16, color: "#f9f9f9", x: 340},
+  {id: 6, label: "ruby", r: 32, fontSize: 16, color: "#f9f9f9", x: 340},
+  {id: 7, label: "python", r: 32, fontSize: 16, color: "#f9f9f9", x: 340},
+
+  {id: 8, label: "DESIGN", r: 88, fontSize: 48, color: "#9f1d19", x: 680},
+  {id: 9, label: "Premiere Pro", r: 32, fontSize: 20, color: "#f9f9f9", x: 680},
+  {id: 10, label: "Maya", r: 48, fontSize: 20, color: "#f9f9f9", x: 680},
+  {id: 11, label: "Lightroom", r: 32, fontSize: 20, color: "#f9f9f9", x: 680},
+  {id: 12, label: "Photoshop", r: 32, fontSize: 20, color: "#f9f9f9", x: 680},
+  {id: 13, label: "Illustlator", r: 32, fontSize: 20, color: "#f9f9f9", x: 680},
+  {id: 14, label: "After Effects", r: 48, fontSize: 20, color: "#f9f9f9", x: 680},
 ];
 
-var radius = 20;
+var radius = 25;
 // node同士の紐付け設定。実用の際は、ここをどう作るかが難しいのかも。
 var links = [
   { source: 0, target: 1 },
@@ -115,8 +35,7 @@ var links = [
   { source: 8, target: 11 },
   { source: 8, target: 12 },
   { source: 8, target: 13 },
-  { source: 8, target: 14 },
-  { source: 8, target: 15 }
+  { source: 8, target: 14 }
 ];
 
 // forceLayout自体の設定はここ。ここをいじると楽しい。
@@ -125,16 +44,16 @@ var force = d3.layout
   .nodes(nodes)
   .links(links)
   .size([width, height])
-  .distance(10) // node同士の距離
-  .friction(0.5) // 摩擦力(加速度)的なものらしい。
-  .linkDistance(50)
-  .charge(10) // 寄っていこうとする力。推進力(反発力)というらしい。
-  .gravity(0.3) // 画面の中央に引っ張る力。引力。
+  .distance(50) // node同士の距離
+  .friction(0.3) // 摩擦力(加速度)的なものらしい。
+  .linkDistance(100)
+  .charge(150) // 寄っていこうとする力。推進力(反発力)というらしい。
+  .gravity(1) // 画面の中央に引っ張る力。引力。
   .start();
 
 // svg領域の作成
 var svg = d3
-  .select("#relation")
+  .select(".web-box")
   .append("svg")
   .attr({ width: width, height: height });
 
@@ -158,14 +77,20 @@ var node = svg
   .attr("r", function(d) {
     return d.r;
   })
+  .attr("x", function(d) {
+    return d.x;
+  })
   .attr({
-    x: -50,
-    y: -50,
-    width: "100px",
-    height: "100px"
+    y: -50
   })
   .style({
-    fill: "1f1f1f"
+    fill: "1f1f1f",
+    "-webkit-box-shadow": "0px 0px 90px 32px rgba(249,249,249,1)",
+    "-moz-box-shadow": "0px 0px 90px 32px rgba(249,249,249,1)",
+    "box-shadow": "0px 0px 90px 32px rgba(249,249,249,1)"
+  })
+  .style( "stroke", function(d) {
+      return d.color;
   })
   .call(force.drag);
 
@@ -177,7 +102,7 @@ var label = svg
   .append("text")
   .attr({
     "text-anchor": "middle",
-    fill: "white"
+    fill: "white",
   })
   .attr(
     "font-size", function(d){
