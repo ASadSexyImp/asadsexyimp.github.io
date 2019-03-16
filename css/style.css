@@ -177,7 +177,7 @@ h2 {
   font-size: 24px;
   font-family: "Futura-MediumItalic";
   line-height: 36px;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
   background-color: transparent;
   letter-spacing: 0.1em;
   vertical-align: top;
@@ -194,13 +194,11 @@ h2 {
   width: 1020px;
   height: 700px;
   position: relative;
-  background-color: #fff;
 }
 
 .relation {
   width: 1020px;
   height: 700px;
-  background-color: #fff;
   position: absolute;
 }
 
@@ -237,12 +235,14 @@ h2 {
 .action {
   font-size: 36px;
   font-family: "Futura-Medium";
-  line-height: 47px;
+  line-height: 36px;
   float: left;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
 }
 
 .detail {
-  font-size: 24px;
+  font-size: 16px;
   font-family: "Futura-MediumItalic";
   float: left;
 }
