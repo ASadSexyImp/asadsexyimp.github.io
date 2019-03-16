@@ -22,6 +22,7 @@
   /* box-sizing: border-box; */
 }
 
+
 body {
   background-color: #1f1f1f;
   width: 100%;
@@ -49,7 +50,9 @@ body {
   100%  { opacity: 0.4; }
 }
 
-#logo  { animation: flicker 6s infinite step-end; }
+#logo2 {
+  animation: flicker 6s infinite step-end;
+}
 
 nav {
   position: fixed;
@@ -87,10 +90,6 @@ a:hover {
   position: absolute;
   /* width: (100% - 1020)/2; */
   z-index: 0;
-}
-
-.box:hover {
-
 }
 
 .box-topleft{
@@ -135,26 +134,7 @@ a:hover {
 
 .home {
   position: relative;
-}
-
-.flux {
-  text-shadow: 0 0 3vw #2356FF;
-  animation: flux 2s linear infinite;
-  -moz-animation: flux 2s linear infinite;
-  -webkit-animation: flux 2s linear infinite;
-  -o-animation: flux 2s linear infinite;
-}
-
-@keyframes flux {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
-    color: #28D7FE;
-  }
-  50% {
-    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
-    color: #146C80;
-  }
+  animation: flicker 6s infinite step-end;
 }
 
 h1 {
@@ -184,16 +164,16 @@ h2 {
 
 
 .web-box {
-  width: 100%;
+  width: 1020px;
   height: 700px;
+  position: relative;
 }
 
-#relation {
-  z-index: 0;
-  width: 100%;
+.relation {
+  width: 1020px;
   height: 700px;
   background-color: #fff;
-  overflow: hidden;
+  position: absolute;
 }
 
 .left-about {
@@ -239,9 +219,6 @@ h2 {
   float: left;
 }
 
-#work {
-  
-}
 .work-box{
   height: 360px;
   width: 333px;
@@ -255,9 +232,38 @@ h2 {
   opacity: 0.2;
 }
 
-.work-square:hover {
-  opacity: 0.8;
+.work-square::before,
+.work-square::after {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  content: '';
+  transition: all .3s;
+  opacity: 1;
 }
+.work-square::before {
+  border-top: 2px solid #3be5ae;
+  border-bottom: 2px solid #3be5ae;
+  transform: scale(0, 1);
+  opacity: 1;
+}
+.work-square::after {
+  border-right: 2px solid #3be5ae;
+  border-left: 2px solid #3be5ae;
+  transform: scale(1, 0);
+  opacity: 1;
+}
+.work-square:hover {
+  color: #3be5ae;
+  opacity: 1;
+}
+.work-square:hover::after,
+.work-square:hover::before {
+  transform: scale(1);
+}
+
 
 .work-title {
   opacity: 1;
@@ -267,6 +273,7 @@ h2 {
   font-family: "Futura-Medium";
   line-height: 48px;
   height: 60px;
+  animation: flicker 6s infinite step-end;
 }
 
 .upshelf {
@@ -286,4 +293,5 @@ h2 {
   width: 320px;
   float: left;
   margin: 0 auto;
+  animation: flicker 6s infinite step-end;
 }

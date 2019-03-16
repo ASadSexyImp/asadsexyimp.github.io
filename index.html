@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.css" rel="stylesheet">
+    <script src = "js/nav.js"></script>
     <!-- スクロールを１ページずつにしてくれるライブラリ -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/15.2.1/smooth-scroll.min.js"></script> -->
     <!-- <script src="js/fullpage.js"></script> -->
@@ -14,7 +15,7 @@
     <script src="https://d3js.org/d3.v3.min.js"></script>
     <!-- スクロールを綺麗にするライブラリ -->
     <link href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
-<script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
@@ -28,10 +29,10 @@
     <nav>
       <div class = "four-corner">
       <ul>
-        <li class = "box box-topleft flex-box"><a href = "#about">about</a></li>
-        <li class = "box box-topright flex-box"><a href = "#skill">skill</a></li>
-        <li class = "box box-bottomleft flex-box"><a href = "#work">work</a></li>
-        <li class = "box box-bottomright flex-box"><a href = "#favorite">favorite</a></li>
+        <li class = "box box-topleft flex-box about"><a href = "#about">about</a></li>
+        <li class = "box box-topright flex-box skill"><a href = "#skill">skill</a></li>
+        <li class = "box box-bottomleft flex-box work"><a href = "#work">work</a></li>
+        <li class = "box box-bottomright flex-box favorite"><a href = "#favorite">favorite</a></li>
       </ul>
       </div>
     </nav>
@@ -60,8 +61,10 @@
 
       <section id = "skill" class = "content container flex-box">
         <div class="container-height">
-          <script id = "relation" src="js/skill.js"></script>
-      </div>
+          <div class="web-box">
+          <script id = "relation" src="js/skill.js" class = "relation"></script>
+        </div>
+        </div>
       </section>
 
       <section id = "work" class = "content container flex-box">
