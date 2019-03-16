@@ -50,10 +50,6 @@ body {
   100%  { opacity: 0.4; }
 }
 
-#logo2 {
-  animation: flicker 6s infinite step-end;
-}
-
 nav {
   position: fixed;
   font-size: 48px;
@@ -81,7 +77,6 @@ a:hover {
   position: relative;
   width: 100vw;
   height: 100vh;
-  
 }
 
 .box{
@@ -128,13 +123,35 @@ a:hover {
 
 .container-height{
   height: 700px;
-  background-color: transparent; 
+  background-color: transparent;
   margin: auto;
 }
 
 .home {
   position: relative;
   animation: flicker 6s infinite step-end;
+}
+
+.sns {
+  position: relative;
+  animation: flicker 2s infinite step-end;
+}
+.facebook {
+  left: 10px;
+  top: -100px;
+  position: absolute;
+}
+
+.github {
+  top: -30px;
+  left: 202px;
+  position: absolute;
+}
+
+.linkedin {
+  top: -100px;
+  right: 10px;
+  position: absolute;
 }
 
 h1 {
@@ -277,7 +294,7 @@ h2 {
 }
 
 .upshelf {
-  margin-top: 32px;
+  margin-top: 64px;
   height: 256px;
   width: 100%;
 }
@@ -293,5 +310,5 @@ h2 {
   width: 320px;
   float: left;
   margin: 0 auto;
-  animation: flicker 6s infinite step-end;
+  animation: flicker 10s infinite step-end;
 }
