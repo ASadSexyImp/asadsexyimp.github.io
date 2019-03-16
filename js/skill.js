@@ -5,43 +5,118 @@ var nodes = [
   {
     id: 0,
     label: "CODE",
-    r: 100
+    r: 50,
+    fontSize: 50
   },
   {
     id: 1,
-    label: "yurikya",
-    r: 100
+    label: "JS",
+    r: 20,
+    fontSize: 20
   },
   {
     id: 2,
-    label: "monster",
-    r: 100
+    label: "HTML/CSS",
+    r: 20,
+    fontSize: 20
   },
   {
     id: 3,
-    label: "razona",
-    r: 100
+    label: "C++",
+    r: 20,
+    fontSize: 20
   },
   {
     id: 4,
-    label: "nett",
-    r: 100
+    label: "P5.js",
+    r: 20,
+    fontSize: 20
   },
   {
     id: 5,
-    label: "ryujin",
-    r: 100
+    label: "rails",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 6,
+    label: "ruby",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 7,
+    label: "python",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 8,
+    label: "DESIGN",
+    r: 50,
+    fontSize: 50
+  },
+  {
+    id: 9,
+    label: "JS",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 10,
+    label: "HTML/CSS",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 11,
+    label: "C++",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 12,
+    label: "P5.js",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 13,
+    label: "rails",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 14,
+    label: "ruby",
+    r: 20,
+    fontSize: 20
+  },
+  {
+    id: 15,
+    label: "python",
+    r: 20,
+    fontSize: 20
   }
 ];
 
-var radius = 100;
+var radius = 20;
 // node同士の紐付け設定。実用の際は、ここをどう作るかが難しいのかも。
 var links = [
   { source: 0, target: 1 },
   { source: 0, target: 2 },
   { source: 0, target: 3 },
   { source: 0, target: 4 },
-  { source: 0, target: 5 }
+  { source: 0, target: 5 },
+  { source: 0, target: 6 },
+  { source: 0, target: 7 },
+  { source: 8, target: 9 },
+  { source: 8, target: 10 },
+  { source: 8, target: 11 },
+  { source: 8, target: 12 },
+  { source: 8, target: 13 },
+  { source: 8, target: 14 },
+  { source: 8, target: 15 }
 ];
 
 // forceLayout自体の設定はここ。ここをいじると楽しい。
@@ -50,11 +125,11 @@ var force = d3.layout
   .nodes(nodes)
   .links(links)
   .size([width, height])
-  .distance(100) // node同士の距離
-  .friction(0.9) // 摩擦力(加速度)的なものらしい。
-  .linkDistance(150)
+  .distance(10) // node同士の距離
+  .friction(0.5) // 摩擦力(加速度)的なものらしい。
+  .linkDistance(50)
   .charge(10) // 寄っていこうとする力。推進力(反発力)というらしい。
-  .gravity(0.1) // 画面の中央に引っ張る力。引力。
+  .gravity(0.3) // 画面の中央に引っ張る力。引力。
   .start();
 
 // svg領域の作成
@@ -70,7 +145,7 @@ var link = svg
   .enter()
   .append("line")
   .style({
-    stroke: "#fff",
+    stroke: "white",
     "stroke-width": 1
   });
 
@@ -83,12 +158,16 @@ var node = svg
   .attr("r", function(d) {
     return d.r;
   })
+  .attr({
+    x: -50,
+    y: -50,
+    width: "100px",
+    height: "100px"
+  })
   .style({
-    fill: "white"
+    fill: "1f1f1f"
   })
   .call(force.drag);
-
-
 
 // nodeのラベル周りの設定
 var label = svg
@@ -98,9 +177,13 @@ var label = svg
   .append("text")
   .attr({
     "text-anchor": "middle",
-    fill: "white",
-    "font-size": "15px"
+    fill: "white"
   })
+  .attr(
+    "font-size", function(d){
+      return d.fontSize;
+    }
+  )
   .text(function(data) {
     return data.label;
   });

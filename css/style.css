@@ -36,6 +36,21 @@ body {
   justify-content: center; /* 横方向中央揃え */
 }
 
+@keyframes flicker {
+  0%    { opacity: 1; }
+  3%    { opacity: 0.4; }
+  6%    { opacity: 1; }
+  7%    { opacity: 0.4; }
+  8%    { opacity: 1; }
+  9%    { opacity: 0.4; }
+  10%   { opacity: 1; }
+  89%   { opacity: 1; }
+  90%   { opacity: 0.4; }
+  100%  { opacity: 0.4; }
+}
+
+#logo  { animation: flicker 6s infinite step-end; }
+
 nav {
   position: fixed;
   font-size: 48px;
@@ -43,7 +58,7 @@ nav {
 }
 
 a { 
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 a:link { 
@@ -63,6 +78,7 @@ a:hover {
   position: relative;
   width: 100vw;
   height: 100vh;
+  
 }
 
 .box{
@@ -70,6 +86,7 @@ a:hover {
   width: 200px;
   position: absolute;
   /* width: (100% - 1020)/2; */
+  z-index: 0;
 }
 
 .box:hover {
@@ -100,43 +117,63 @@ a:hover {
   width: 1020px;
   margin: 0 auto;
   position: relative;
+  background-color: transparent;
+  z-index: 0;
 }
 
 .content{
   height: 100vh;
-  background-color: tramsparent;
+  background-color: transparent;
+
+}
+
+.container-height{
+  height: 700px;
+  background-color: transparent; 
+  margin: auto;
 }
 
 .home {
   position: relative;
 }
 
-.header{
-  width: 100%;
-  height: 128px;
-  text-align: center;
-  padding: auto 0;
-  position: relative;
-  font-size: 48px;
-  font-family: "Futura-Bold";
-  background-color: transparent;
+.flux {
+  text-shadow: 0 0 3vw #2356FF;
+  animation: flux 2s linear infinite;
+  -moz-animation: flux 2s linear infinite;
+  -webkit-animation: flux 2s linear infinite;
+  -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    color: #146C80;
+  }
 }
 
 h1 {
   text-align: center;
-  font-size: 72px;
+  font-size: 56px;
   -webkit-text-stroke: 2px #f9f9f9;
   font-family: "Futura-Bold";
   color: transparent;
-  line-height: 72px;
+  line-height: 56px;
+  background-color: transparent;
 }
 
 h2 {
   text-align: center;
-  font-size: 48px;
+  font-size: 36px;
   font-family: "Futura-MediumItalic";
-  line-height: 48px;
-  margin-bottom: 48px;
+  line-height: 36px;
+  margin-bottom: 32px;
+  background-color: transparent;
 }
 
 .profile {
@@ -152,11 +189,11 @@ h2 {
 }
 
 #relation {
-  z-index: 3;
+  z-index: 0;
   width: 100%;
   height: 700px;
   background-color: #fff;
-  position: absolute;
+  overflow: hidden;
 }
 
 .left-about {
@@ -206,14 +243,14 @@ h2 {
   
 }
 .work-box{
-  height: 350px;
+  height: 360px;
   width: 333px;
   float: left;
   margin-right: 7px;
 }
 
 .work-square {
-  height: 230px;
+  height: 296px;
   width: 100%;
   opacity: 0.2;
 }
@@ -225,27 +262,28 @@ h2 {
 .work-title {
   opacity: 1;
   font-size: 48px;
-  color: #1f1f1f;
+  color: #f9f9f9;
   text-align: center;
   font-family: "Futura-Medium";
+  line-height: 48px;
+  height: 60px;
 }
 
 .upshelf {
-  margin-top: 128px;
+  margin-top: 32px;
   height: 256px;
   width: 100%;
 }
 
 .downshelf {
-  margin-top: 64px;
   height: 256px;
   width: 700px;
-  text-align: center;
-  margin: 0 auto;
+  margin: 64px auto;
 }
 
 .shelf {
   height: 100%;
   width: 320px;
   float: left;
+  margin: 0 auto;
 }
