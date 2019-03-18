@@ -52,7 +52,6 @@ body {
 }
 
 nav {
-  position: fixed;
   font-size: 36px;
   font-family: "Futura-Bold";
 }
@@ -117,6 +116,7 @@ a span:nth-of-type(3) {
 
 a { 
   text-decoration: none;
+  background-color: transparent;
 }
 
 a:link { 
@@ -142,9 +142,10 @@ a:hover {
 .box{
   height: 128px;
   width: 200px;
-  position: absolute;
+  position: fixed;
   /* width: (100% - 1020)/2; */
-  z-index: 0;
+  z-index: 6;
+  background-color: transparent;
 }
 
 .box-topleft{
