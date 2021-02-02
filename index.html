@@ -1,130 +1,103 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <title>portfolio</title>
-    <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- fullpage関係 -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/fullpage.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/vendors/easings.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.4/vendors/scrolloverflow.min.js"></script>
-    
-    
-    <script src = "js/nav.js"></script>
-    <script src = "js/smoothscroll.js"></script>
-    <!-- スクロールを１ページずつにしてくれるライブラリ -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/15.2.1/smooth-scroll.min.js"></script> -->
-    <!-- <script src="js/fullpage.js"></script> -->
-    <!-- データを可視化するライブラリ -->
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    <!-- スクロールを綺麗にするライブラリ -->
-    <link href="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css">
-    <script src="https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <!-- <script src="lib/p5.min.js"></script>
-    <script src="lib/p5.dom.min.js"></script>
-    <script src="lib/p5.play.js"></script> -->
-    <!-- <script src="js/sketch.js"></script> -->
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <title>asadsexyimp</title>
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Bevan" rel="stylesheet" />
+  <!-- plugin -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
-  <body>
-    <nav>
-      <ul>
-        <li class = "box box-topleft flex-box about"><a href = "#about">about</a></li>
-        <li class = "box box-topright flex-box skill"><a href = "#skill">skill</a></li>
-        <li class = "box box-bottomleft flex-box work"><a href = "#work">work</a></li>
-        <li class = "box box-bottomright flex-box favorite"><a href = "#favorite">favorite</a></li>
-      </ul>
-    </nav>
-    <div class = "container" id = "fullpage">
-      <section id = "home" class = "content flex-box">
-        <div class="eye-catch">
-          <img src = "svg/neon_sign_sxy.svg" width="500" class="home" alt="">
-          <div class = "sns">
-            <a href = "https://www.facebook.com/masakazumarvel" class = "facebook" target="_blank"><img src="svg/facebook.svg" width = "95"alt=""></a>
-            <a href = "https://github.com/ASadSexyImp" class = "github" target="_blank"><img src="svg/github.svg" width = "95"alt=""></a>
-            <a href = "https://www.linkedin.com/in/masamarvel/" class = "linkedin" target="_blank"><img src="svg/linkedin.svg" width = "95"alt=""></a>
-          </div>
-          <div class = "flex-box">
-          <a href="#"><span></span><span></span><span></span></a>
-          </div>
-        </div>
-        
-      </section>
+<body>
+  <!-- navエリア -->
+  <nav>
+    <!-- https://codepen.io/inesmontani/pen/LGKPqY
+      https://codepen.io/wbarahona/pen/vLoyOb -->
+    <ul>
+      <li class="box box-topleft flex-box about">
+        <a href="#about">about</a>
+      </li>
+      <li class="box box-topright flex-box skill">
+        <a href="#skill">skill</a>
+      </li>
+      <li class="box box-bottomleft flex-box work">
+        <a href="#work">history</a>
+      </li>
+      <li class="box box-bottomleft flex-box work">
+        <a href="#work">work</a>
+      </li>
+      <li class="box box-bottomright flex-box favorite">
+        <a href="#favorite">contact</a>
+      </li>
+    </ul>
+  </nav>
 
-      <section id = "about" class = "content container flex-box">
-        <div class="container-height">
-        <h1>Masakazu Nishimura</h1>
-        <h2>a.k.a. MARVEL / MUSASHI</h2>
-        <div class = "left-about">
-        <img src = "assets/images/profile.png" class = "profile">
-        </div>
-        <div class = "right-about">
-            <div class="history"><p class="year flex-box">2014.4</p><div class = "contents-paragraph"><p class="action">Seikei University</p><p class="detail">Major computer science</p></div></div>
-            <div class="history"><p class="year flex-box">2015.8</p><div class = "contents-paragraph"><p class="action">Hitchhike 10000+km</p><p class="detail">Japan / Thailand / Malaysia / Australia</p></div></div>
-            <div class="history"><p class="year flex-box">2016.3</p><div class = "contents-paragraph"><p class="action">Life is Tech! Mentor</p><p class="detail">Minecraft / Media Art / 3DCG / Movie<br>Camera / Web Service / Web Design</p></div></div>
-            <div class="history"><p class="year flex-box">2017.8</p><div class = "contents-paragraph"><p class="action">Queensland University</p><p class="detail">Business English / IT support intern</p></div></div>
-            <div class="history"><p class="year flex-box">2018.5</p><div class = "contents-paragraph"><p class="action">Meeting Sony α7RⅡ</p><p class="detail">photograher at Life is Tech! camp</p></div></div>
-            <div class="history"><p class="year flex-box">2018.8</p><div class = "contents-paragraph"><p class="action">Oxford Camp Mentor</p><p class="detail">Life is Tech! global camp movie mentor</p></div></div>
-        </div>
-      </div>
-      </section>
+  <!-- コンテンツ -->
+  <div class="container">
+    <!-- キャッチエリア -->
+    <section id="home" class="content flex-box">
+      <!-- p5.js or theree.js でメディアアート作品 -->
+      <p>masakazu nishimura</p>
+      <!-- https://codepen.io/Ulvbern/pen/gjWJWx -->
 
-      <section id = "skill" class = "content container flex-box">
-        <div class="container-height">
-          <div class="web-box">
-          <script id = "relation" src="js/skill.js" class = "relation"></script>
-        </div>
-        </div>
-      </section>
+      <!-- 背景 -->
+      <!-- https://codepen.io/towc/pen/QbZOaJ
+        https://codepen.io/suth_a/pen/wJJQRa
+        https://codepen.io/joehandlebar/pen/MyoXRg -->
+    </section>
 
-      <section id = "work" class = "content container flex-box">
-          <div class="container-height">
-        <div class = "work-box" data-aos="fade-up">
-          <a href = "https://en.technologia-schoolofmagic.jp/" target="_blank"><img src = "assets/images/technologia.png" class = "work-square"></a>
-          <p class = "work-title">Technologia</p>
-        </div>
-        <div class = "work-box" data-aos="fade-up">
-          <a href = "https://lifeistech.co.jp/en/" target="_blank"><img src = "assets/images/mentor.png" class = "work-square"></a>
-          <p class = "work-title">Mentor</p>
-        </div>
-        <div class = "work-box" data-aos="fade-up">
-          <a href = "https://www.flickr.com/people/asadsexyimp/" target="_blank"><img src = "assets/images/photographer.png" class = "work-square"></a>
-          <p class = "work-title">Photographer</p>
-        </div>
-        <div class = "work-box" data-aos="fade-up">
-          <a href = "http://meshprj.com/en/" target="_blank"><img src = "assets/images/sony.png" class = "work-square"></a>
-          <p class = "work-title">Sony Mesh</p>
-        </div>
-        <div class = "work-box" data-aos="fade-up">
-          <a href = "https://youtu.be/elhT5DbQ_YA" target="_blank"><img src = "assets/images/youtuber.png" class = "work-square"></a>
-          <p class = "work-title">Youtuber</p>
-        </div>
-        <div class = "work-box" data-aos="fade-up">
-          <a href = "https://www.hanamarulab.com/en" target="_blank"><img src = "assets/images/hanamaru.png" class = "work-square"></a>
-          <p class = "work-title">Hanamaru Lab</p>
-        </div>
-      </div>
-      </section>
+    <section id="about" class="content flex-box">
+      <h1>about</h1>
+      <h2>Creator</h2>
+      <p>I'm not a engneer or designer<br />I just love creation with IT</p>
+      <!-- クリッピングマスクした写真のスライドショー -->
+      <!-- https://codepen.io/jcoulterdesign/pen/OMOqjy -->
+      <p>I can program</p>
+      <p>I can design</p>
+      <p>I can challenge</p>
+      <p>I can change</p>
+      <p>I can imagine</p>
+      <!-- 文字もスライドする -->
+    </section>
 
-      <section id = "favorite" class = "content container flex-box">
-          <div class="container-height">
-        <div class = "upshelf">
-          <div class="box-topleft shelf flex-box"><img src="svg/camera.svg" width="320" alt=""></div>
-          <div class = "shelf flex-box"><img src="svg/spider.svg" width="256" alt=""></div>
-          <div class="box-topright shelf flex-box"><img src="svg/pc.svg" width="320" alt=""></div>
-        </div>
-        <div class = "downshelf flex-box">
-            <div class="box-topleft shelf flex-box"><img src="svg/backpack.svg" width="256" height = "256"alt=""></div>
-            <div class="box-topright shelf flex-box"><img src="svg/soccer.svg" width="256" alt=""></div>
-        </div>
-      </div>
-      </section>
-    </div>
-  </body>
+    <section id="skill" class="content flex-box">
+      <h1>skill</h1>
+      <!-- 時間表示
+        https://codepen.io/christianhanvey/pen/imKIb
+        ホログラム
+        https://codepen.io/gau/pen/ogqjzw
+        https://codepen.io/marioluevanos/pen/XKqNkB
+        https://codepen.io/k3no/pen/BLNEKg
+        https://codepen.io/mo3golom/pen/VjGkLy?&page=2 -->
+    </section>
+
+    <section id="history" class="content flex-box">
+      <h1>history</h1>
+      <!-- timeline.js -->
+    </section>
+
+    <section id="work" class="content flex-box">
+      <h1>work</h1>
+    </section>
+
+    <section id="contact" class="content flex-box">
+      <h1>contact</h1>
+      <a ref="https://www.facebook.com/masakazumarvel"><i class="fab fa-facebook"></i></a>
+      <a ref="https://www.instagram.com/asadsexyimp/"><i class="fab fa-instagram"></i></a>
+      <a ref="https://www.instagram.com/sxy_studio/"><i class="fab fa-instagram"></i></a>
+      <a ref="https://www.youtube.com/channel/UCUwe_HaOMhG1-4hpL-OhYcA"><i class="fab fa-youtube"></i></a>
+      <a ref="https://github.com/ASadSexyImp"><i class="fab fa-github"></i></a>
+      <a ref="https://qiita.com/asadsexyimp">qiita</a>
+      <a ref="https://www.couchsurfing.com/people/masakazu-nishimura">coushsurfing</a>
+      <a ref="https://filmarks.com/users/masamarvel">filmarks</a>
+      <a ref="https://www.linkedin.com/in/masamarvel/"><i class="fab fa-linkedin-in"></i></a>
+      <a ref="https://www.wantedly.com/users/12662057">wantedly</a>
+    </section>
+
+    <footer>©︎asadsexyimp</footer>
+  </div>
+</body>
 </html>
